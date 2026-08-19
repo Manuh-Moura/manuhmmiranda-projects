@@ -18,6 +18,24 @@ function adicionarTarefa(){
         contadorId++;
         tarefas.push({id: contadorId, tarefa: texto, concluido: false});
         inText.value = '';
-        console.log(tarefas)
+        renderizar();
     }    
+}
+function renderizar(){
+    lista.innerHTML = ''
+    tarefas.forEach(function(item){
+        let li = document.createElement('li')
+        li.textContent = item.tarefa
+        lista.appendChild(li)
+        let btnEx = document.createElement('button')
+        btnEx.innerText = '✕'
+        li.appendChild(btnEx)
+        btnEx.addEventListener('click', function(e){
+            e.stopPropagation();
+            tarefas = tarefas.filter(function(t){
+                return t.id !== item.id
+            })
+            renderizar()
+        })
+    })
 }

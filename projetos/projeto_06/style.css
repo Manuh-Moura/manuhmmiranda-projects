@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d9f3f1;
+}
+h1{
+    color: #afcec7;
+}
+.inText{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 0px 20px;
+    border: 2px solid #afcec7 ;
+    color: #5f6866;
+
+}
+div {
+    padding: 30px 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.btnEnviar{
+   border-radius: 70px;
+   margin: 10px;
+   border: 2px solid #afcec7;
+   background-color: #ffffff;
+   color: #5f6866;
+   padding: 2px 0px;
+}
+.btnEx{
+ mar
+}
+li {
+    padding-right: 20px;
+}
