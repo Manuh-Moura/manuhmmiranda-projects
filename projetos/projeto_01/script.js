@@ -6,9 +6,7 @@ function criarTabuleiro() {
         let casa = document.createElement('div');
         casa.classList.add('casa');
         tabuleiro.appendChild(casa);
-        if((c+i) % 2 == 0) {
-        casa.classList.add('preto')
-        }
+        
 
         }
     }

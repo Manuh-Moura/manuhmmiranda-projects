@@ -9,10 +9,10 @@ body{
 .modal {
     width: 100vw;
     height: 100vh;
-    background-color: #e9d3f3;
+    background-image: url(./assets/background-victory.png);
     position: absolute;
-    left: 0;
-    top: 0;
+    background-position: center;
+    
     display: none;
     align-items: center;
     justify-content: center;
@@ -22,13 +22,37 @@ body{
     display: flex;
 
 }
+img{
+    width: 30px;
+}
+.btnFechar{
+    background-color: #081625;
+    background-image: url(./assets/close.png);
 
+    width: 43.17px;
+    height: 43.17px;
+    position: relative;
+    top: -280px;
+    right: -770px;
+    border: 3px solid #081625;
+
+}
 .container{
-    background-color: #cd9ee2;
+            
     width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 40px;
     text-align: center;
+    color: #00C0DD;
+    text-align: center;
+    
+}
+
+h1{
+    font-size: 100px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }

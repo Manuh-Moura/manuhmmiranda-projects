@@ -9,3 +9,4 @@ btnAbrir.addEventListener('click', function(){
 btnFechar.addEventListener('click', function(){
     modal.classList.remove('is-active')
 })
+
