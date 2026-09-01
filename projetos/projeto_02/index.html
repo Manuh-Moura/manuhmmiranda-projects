@@ -1,26 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div>
-        <button class="btnAbrir">↪Abrir Modal☆.。</button>
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Jogo de Palavras</title> <link rel="stylesheet" href="style.css"> </head> <body>
+<header class="jmHeader">
+
+    <div class="jmTentativas">
+        <h3>TENTATIVAS</h3>
+
+        <h1 class="jmH1">
+            <span class="jmGreen">0</span>/6
+        </h1>
+
+        <img src="./assets/among-02.png" alt="">
     </div>
 
-    <div class="modal">
-        <div>
-        <button class="btnFechar"></button>
-        </div>
-        <div class="container">
-            <h1>Vitoria</h1>
-            <img src="./assets/among-02.png" alt="">
-            
-        </div>
+    <p class="jmPheader">
+        Adivinhe a palavra secreta de 5 letras.
+    </p>
+
+    <button class="jmReset"></button>
+
+</header>
+
+
+<main class="jmMain">
+
+    <div class="jmTermo">
+
+        <input
+            class="jmInput"
+            type="text"
+            placeholder="Acerte a senha"
+            maxlength="5"
+        >
+
+        <button class="jmBtnEnviar">
+            ENVIAR
+        </button>
+
     </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+</main>
+
+
+<div class="jmModal jmModalVitoria">
+
+    <button
+        class="jmFecharModal"
+        aria-label="Fechar modal"
+    ></button>
+
+    <div class="jmContainer">
+
+        <h1>Vitória</h1>
+
+        <img
+            src="./assets/among-02.png"
+            alt=""
+            class="jmAmongVitoria"
+        >
+
+    </div>
+
+</div>
+
+
+
+<div class="jmModal jmModalDerrota">
+
+    <button
+        class="jmFecharModal"
+        aria-label="Fechar modal"
+    ></button>
+
+    <div class="jmContainer1">
+
+        <h1>Derrota</h1>
+
+        <img
+            src="./assets/among-02.png"
+            alt=""
+            class="jmAmongDerrota"
+        >
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body> </html>
