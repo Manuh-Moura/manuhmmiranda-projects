@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    text-align:center;
+    font-family:Arial, sans-serif;
+    padding:30px;
+    background-color: rgb(246, 246, 210);
+}
+
+
+h1{
+    margin-bottom:20px;
+    color:#6A1B9A ;
+}
+
+
+p{
+    margin:20px 0 10px;
+}
+
+
+.caixa{
+    width:350px;
+    height:180px;
+    margin:auto;
+    border:3px solid purple;
+    background-color:#f2d2dd;
+}
+
+
+/* Repete */
+.repeat{
+    background-image:url("./assets/img1.png");
+}
+
+
+/* Uma vez */
+.norepeat{
+    background-image:url("./assets/img2.png");
+    background-repeat:no-repeat;
+}
+
+
+/* Centralizada */
+.center{
+    background-image:url("./assets/img3.png");
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+
+/* Cobre tudo */
+.cover{
+    background-image:url("./assets/img4.png");
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* Canto inferior direito */
+.canto{
+    background-image:url("./assets/img5.png");
+    background-repeat:no-repeat;
+    background-position:bottom right;
+}

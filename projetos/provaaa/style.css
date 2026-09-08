@@ -1,0 +1,114 @@
+*{
+     padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+header {
+     display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+.links {
+    display: flex;
+    gap: 10px;
+}
+.links a {
+    
+    text-decoration: none;
+
+}
+.boton {
+    padding: 0px 20px;
+    background-color: #00C200;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    
+}
+
+.boton:hover {
+    background-color: white;
+    border:1px solid #00C200;
+    color: #00C200;
+}
+.cartoes{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ gap: 30px;
+ padding: 60px 0px;
+ grid-template-rows: repeat(3,1fr);
+ width: 550px;
+ max-width: 1000px;
+ margin: 0 auto;
+ align-items: center;
+   
+
+}
+.cartao{
+    position: relative;
+    width: 290px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+}
+.card-img {
+    width: 232px;
+    height: 122px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(216, 216, 216);
+
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #00C200;
+    border: 1px solid white;
+    color: #ffffff;
+}
+button:hover {
+    background-color: #ffffff;
+    border: 1px solid #00C200;
+    color: #00C200;
+}
+.desconto {
+    position: absolute;
+    background-color: #00C200;
+    color: white;
+    padding: 5px 0px;
+    width: 50px;
+    text-align: center;
+    right: 15px;
+    top:14px;
+    border-radius: 5px;
+
+}
+
+.linha {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    align-items: flex-end;
+
+    
+
+}
+.stars {
+    padding-right: 10px;
+}

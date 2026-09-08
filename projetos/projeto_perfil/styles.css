@@ -1,0 +1,25 @@
+#perfil {
+    color: #800080;
+    weight: 700;
+    size: 24px;
+}
+.second {
+    color: #E91E63;
+    weight: 700;
+    size: 16px;
+}
+#seguidores {
+    color: #178FFF;
+    weight: 700;
+    size: 22px;
+}
+#third {
+    color: #FF28D1;
+    weight: 400;
+    size: 18px;
+}
+#fourth {
+    color: #8E8E8E;
+    weight: 400;
+    size: 13px;
+}

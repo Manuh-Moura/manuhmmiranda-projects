@@ -1,0 +1,22 @@
+#vermelho {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(156, 0, 0);
+}
+
+.texto {
+    text-align: center;
+    line-height: 200px;
+    color: white;
+}
+
+#amarelo {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(240, 204, 1);
+}
+#verde {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}

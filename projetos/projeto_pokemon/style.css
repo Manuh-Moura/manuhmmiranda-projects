@@ -1,0 +1,27 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.fora {
+    background-color: #59F1F6;
+    margin: 40px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+}
+h2 {
+    text-align: center;
+    margin: 10px 0px;
+}
+.dentro {
+    background-color: #8EFBFF;
+    padding: 10px;
+    border-radius: 10px;
+}
+.texto {
+    text-align: center;
+    color: #09AEB3;
+    margin-top: 10px;
+}

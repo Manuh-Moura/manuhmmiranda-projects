@@ -1,324 +1,40 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
 
 body {
-background-color: #0A1B2D;
-font-family: Arial, Helvetica, sans-serif;
-display: flex;
-flex-direction: column;
-min-height: 100vh;
+    position: relative;
 }
 
-.jmHeader {
-position: relative;
-background-color: #081728;
-padding: 20px 0 10px;
-border-bottom: 4px solid #051222;
-display: flex;
-flex-direction: column;
-align-items: center;
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(243, 109, 232, 0.623);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
-.jmTentativas {
-background-color: #0A1B2D;
-border: 2px solid #051222;
-border-radius: 20px;
-padding: 12px 40px;
-width: 220px;
-text-align: center;
-margin-bottom: 6px;
-position: relative;
+
+.modal.is-active {
+    display: flex;
 }
 
-.jmTentativas h3 {
-color: #9FB5C9;
-font-size: 0.9rem;
-font-weight: normal;
-letter-spacing: 1px;
+
+.container {
+    background-color: rgb(255, 0, 212);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
 }
 
-.jmH1 {
-color: #2B4056;
-font-size: 2.4rem;
-font-weight: bold;
-margin-top: 2px;
-}
-
-.jmGreen {
-color: #238E4B;
-}
-
-.jmTentativas img {
-position: absolute;
-left: -150px;
-top: -20px;
-width: 120px;
-}
-
-.jmPheader {
-color: #9FB5C9;
-font-size: 0.95rem;
-margin-top: 4px;
-text-align: center;
-}
-
-.jmReset {
-background-image: url(./assets/return.png);
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
-position: absolute;
-width: 43.17px;
-height: 43.17px;
-cursor: pointer;
-top: 20px;
-right: 40px;
-border: none;
-background-color: transparent;
-}
-
-.jmReset:hover {
-background-image: url(./assets/return-hover.png);
-}
-
-.jmMain {
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 0px;
-}
-
-.jmTermo {
-background-color: #081625;
-border: 3px solid #000612;
-border-radius: 12px;
-width: 380px;
-padding: 18px 18px 22px;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 14px;
-}
-
-.jmInput {
-width: 100%;
-max-width: 280px;
-height: 44px;
-background-color: #06111F;
-border: 2px solid #2B4056;
-border-radius: 10px;
-color: #ffffff;
-font-size: 20px;
-font-weight: bold;
-text-align: center;
-text-transform: uppercase;
-outline: none;
-}
-
-.jmInput::placeholder {
-color: #5D5D5D;
-font-weight: normal;
-text-transform: none;
-}
-
-.jmInput:focus {
-border-color: #238E4B;
-}
-
-.jmBtnEnviar {
-width: 100%;
-max-width: 280px;
-height: 38px;
-background-color: #2B4056;
-border: 3px solid #06111F;
-border-radius: 10px;
-color: #081625;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
-}
-
-.jmBtnEnviar:hover {
-background-color: #3a5770;
-}
-
-.jmBtnEnviar:disabled {
-opacity: 0.5;
-cursor: not-allowed;
-}
-
-.jmInput:disabled {
-opacity: 0.5;
-cursor: not-allowed;
-}
-
-.jmQuadrado {
-display: flex;
-flex-direction: column;
-gap: 6px;
-margin-top: 4px;
-width: 100%;
-align-items: center;
-}
-
-.linhaTabuleiro {
-display: flex;
-gap: 6px;
-}
-
-.casa{
-width: 48px;
-height: 48px;
-background-color: #06111F;
-border: 2px solid #2B4056;
-border-radius: 6px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 24px;
-font-weight: bold;
-color: #ffffff;
-text-transform: uppercase;
-}
-
-.certo {
-background-color: #238E4B;
-border-color: #238E4B;
-}
-
-.presente {
-background-color: #B59F3B;
-border-color: #B59F3B;
-}
-
-.erro {
-background-color: #3A3A3C;
-border-color: #3A3A3C;
-}
-
-.jmModal {
-width: 100vw;
-height: 100vh;
-position: fixed;
-left: 0;
-top: 0;
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 1000;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-}
-
-.jmModal.is-active {
-display: flex;
-}
-
-.jmModalVitoria {
-background-image: url("./assets/background-victory.png");
-}
-
-.jmModalDerrota {
-background-image: url("./assets/background-defeat.png");
-}
-
-.jmContainer {
-width: 380px;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 20px;
-padding: 40px;
-color: #00C0DD;
-text-align: center;
-}
-
-.jmContainer1 {
-width: 380px;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 20px;
-padding: 40px;
-color: #DE0000;
-text-align: center;
-}
-
-.jmContainer h1 {
-font-size: 70px;
-font-weight: 700;
-}
-
-.jmContainer1 h1 {
-font-size: 70px;
-font-weight: 700;
-}
-
-.jmAmongVitoria {
-position: static;
-width: 200px;
-}
-
-.jmAmongDerrota {
-position: static;
-width: 200px;
-}
-
-.jmFecharModal {
-background-color: #081625;
-background-image: url(./assets/close.png);
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
-width: 43.17px;
-height: 43.17px;
-position: absolute;
-top: 30px;
-right: 40px;
-border: 3px solid #081625;
-cursor: pointer;
-}
-
-.jmFecharModal:hover {
-    opacity: 0.8;
-    background-image: url(./assets/close-hover.png);
-}
-
-@media (max-width: 600px) {
-
-    .jmTentativas img {
-        left: -70px;
-        top: -15px;
-        width: 80px;
-    }
-
-    .jmReset {
-        right: 15px;
-        top: 15px;
-    }
-
-    .jmTermo {
-        width: 95%;
-        max-width: 380px;
-    }
-
-    .casa {
-        width: 42px;
-        height: 42px;
-        font-size: 20px;
-    }
-
-    .jmContainer h1 {
-        font-size: 50px;
-    }
-
-    .jmFecharModal {
-        right: 20px;
-        top: 20px;
-    }
-}

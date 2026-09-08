@@ -1,0 +1,478 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.18), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.18), transparent 30%),
+        linear-gradient(135deg, #080b18, #11152b, #17133a);
+
+    color: #ffffff;
+    padding: 0 25px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    text-align: center;
+    padding: 90px 20px 60px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 18px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(192, 132, 252, 0.5);
+    border-radius: 50px;
+
+    background: rgba(139, 92, 246, 0.12);
+
+    color: #d8b4fe;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.15);
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 75px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d8b4fe,
+        #a78bfa,
+        #ffffff
+    );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: brilho 5s linear infinite;
+
+    transition: transform 0.2s ease;
+}
+
+.descricao {
+    color: #aeb4d0;
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+.linha {
+    width: 120px;
+    height: 3px;
+
+    margin: 35px auto 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #a855f7,
+        #c084fc,
+        transparent
+    );
+
+    box-shadow: 0 0 20px #a855f7;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+main h2 {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 45px;
+
+    color: #f5f3ff;
+}
+
+
+/* =========================
+   GRID DOS PROJETOS
+========================= */
+
+.projetos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    padding-bottom: 80px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.projeto {
+    position: relative;
+
+    display: flex;
+    gap: 18px;
+
+    min-height: 190px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+/* Brilho passando pelo card */
+
+.projeto::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+.projeto:hover::before {
+    left: 140%;
+}
+
+
+/* Efeito hover */
+
+.projeto:hover {
+    transform: translateY(-10px) scale(1.02);
+
+    border-color: rgba(168, 85, 247, 0.5);
+
+    background: rgba(139, 92, 246, 0.09);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+
+/* =========================
+   NÚMERO DO PROJETO
+========================= */
+
+.numero {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.3);
+
+    transition: transform 0.3s ease;
+}
+
+.projeto:hover .numero {
+    transform: rotate(8deg) scale(1.1);
+}
+
+
+/* =========================
+   TEXTO DOS CARDS
+========================= */
+
+.projeto h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+    color: #ffffff;
+}
+
+.projeto p {
+    color: #9ca3c7;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.projeto a {
+    display: inline-block;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    background: rgba(139, 92, 246, 0.15);
+
+    border: 1px solid rgba(168, 85, 247, 0.3);
+
+    color: #c4b5fd;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.projeto a:hover {
+    background: #8b5cf6;
+
+    color: white;
+
+    border-color: #a78bfa;
+
+    box-shadow:
+        0 5px 20px rgba(139, 92, 246, 0.35);
+
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   PROJETO DESTAQUE
+========================= */
+
+.projeto.destaque {
+    border-color: rgba(192, 132, 252, 0.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.13),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.08);
+}
+
+.projeto.destaque .numero {
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #ec4899
+    );
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px 50px;
+
+    color: #8f96b5;
+
+    font-size: 14px;
+}
+
+.footer-linha {
+    width: 100%;
+    max-width: 700px;
+
+    height: 1px;
+
+    margin: 0 auto 30px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(168, 85, 247, 0.5),
+        transparent
+    );
+}
+
+footer strong {
+    color: #c4b5fd;
+}
+
+footer span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #626987;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes brilho {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes flutuar {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 60px 10px 45px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .descricao {
+        font-size: 15px;
+    }
+
+    main h2 {
+        font-size: 25px;
+    }
+
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto {
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+    footer {
+        padding-bottom: 35px;
+    }
+
+}

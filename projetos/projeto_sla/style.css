@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(243, 219, 223);
+}
+.roxo {
+    color: rgb(146, 4, 228);
+}
+.fundo {
+    background-color: rgb(183, 109, 233);
+    padding: 30px;
+}
+.texto {
+    color: white;
+}
+.fundo2 {
+    background-color: rgb(236, 69, 124);
+    margin: 30px;
+}
+.fundo3 {
+    background-color: rgb(126, 240, 234);
+    margin: 20px;
+    padding: 20px;
+}

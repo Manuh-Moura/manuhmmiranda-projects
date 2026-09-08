@@ -1,0 +1,19 @@
+
+.linha {
+    background-color: purple;
+}
+.texto {
+    color:rgb(255, 237, 252);
+}
+span {
+    color: #FF2D55;
+}
+.fundo {
+    background-color: rgb(255, 255, 255);
+}
+#texto2 {
+    color: rgb(255, 237, 252);
+}
+body{
+    background-color: rgb(255, 236, 255);
+}

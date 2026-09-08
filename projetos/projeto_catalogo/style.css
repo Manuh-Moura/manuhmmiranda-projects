@@ -1,0 +1,80 @@
+header {
+    display: flex;
+    background-color: #D9D9D9;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+
+}
+* {
+     padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.links {
+    display: flex;
+    gap: 20px;
+}
+.links a {
+    color: black;
+    text-decoration: none;
+}
+
+.hero {
+background-color: #767676;
+height: 580px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+footer {
+    background-color: #D9D9D9;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.card-img {
+ width: 206px;
+ height: 97px;
+ background-color: black;
+}
+.cartao {
+    position: relative;
+    width: 250px;
+    background-color: rgb(98, 98, 180);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cartoes {
+   display: flex;
+   flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 0px;
+}
+button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+button:hover {
+    background-color: rgb(24, 26, 49);
+    color: white;
+    border:  rgb(255, 255, 255) ;
+}
+.desconto {
+    position: absolute;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    padding: 5px 0px;
+    width: 50px;
+    text-align: center;
+    right: 15px;
+    top:14px;
+
+}

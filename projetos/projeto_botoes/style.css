@@ -1,0 +1,46 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.buttom {
+    margin: 10px;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 168px;
+}
+.b-1 {
+    padding: 10px 25px;
+    border:2px solid black;
+    color: black;
+    max-width: 168px;
+}
+.b-1:hover {
+    background-color: black;
+    color: white;
+}
+.b-2 {
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: black;
+    background-color: #80E8FF;
+    text-align: center;
+    font-weight: 700;
+}
+.b-2:hover {
+    background-color: #9EEDFF;
+    color: black;
+}
+.b-3 {
+    padding:10px 15px;
+    text-align: center;
+    color: black;
+    background-color: #41FF6A;
+    border-radius: 15px;
+    font-weight: 700;
+}
+.b-3:hover {
+    background-color: #8BFFA4;
+}
