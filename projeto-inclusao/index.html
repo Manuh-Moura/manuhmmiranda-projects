@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Tecnologia para todos: a importância da inclusão e da acessibilidade digital."
+  >
+
+  <title>Tecnologia para Todos</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ACESSIBILIDADE */
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: #111827;
+      color: white;
+      padding: 10px 15px;
+      z-index: 999;
+    }
+
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    :focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 3px;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      background: #111827;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #e5eefc;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 25px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 80px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .gray-section {
+      background: #f3f4f6;
+    }
+
+    .section-label {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #2563eb;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      font-size: 1.1rem;
+      margin-bottom: 45px;
+    }
+
+    h3 {
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      margin-bottom: 10px;
+    }
+
+    /* SOLUÇÕES */
+
+    .solutions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .solution {
+      border-left: 5px solid #2563eb;
+      padding: 25px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    /* GALERIA */
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .gallery-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #d1d5db;
+    }
+
+    .gallery-item.reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-text {
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .gallery-number {
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .gallery-text h3 {
+      font-size: 1.8rem;
+    }
+
+    .gallery-text p {
+      margin-bottom: 12px;
+    }
+
+    .gallery-image {
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #dbeafe;
+      overflow: hidden;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+    }
+
+    /* ÁUDIO */
+
+    .audio-box {
+      background: #111827;
+      color: white;
+      padding: 35px;
+      border-radius: 12px;
+      max-width: 800px;
+    }
+
+    .audio-box h3 {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    audio {
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    /* TRANSCRIÇÃO */
+
+    .transcript {
+      background: #ffffff;
+      color: #1f2937;
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .transcript summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .transcript p {
+      margin-top: 12px;
+    }
+
+    /* VÍDEO */
+
+    .video-box {
+      max-width: 900px;
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .video-description {
+      color: white;
+      margin-top: 15px;
+    }
+
+    .video-box .transcript {
+      margin-top: 20px;
+    }
+
+    /* MENSAGEM FINAL */
+
+    .final-message {
+      text-align: center;
+      background: #2563eb;
+      color: white;
+    }
+
+    .final-message h2 {
+      color: white;
+    }
+
+    .final-message p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1.2rem;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: #111827;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .header-content {
+        flex-direction: column;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 700px) {
+
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .cards,
+      .solutions {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-text {
+        padding: 30px;
+        order: 1;
+      }
+
+      .gallery-image {
+        min-height: 250px;
+        order: 2;
+      }
+
+      .gallery-image img {
+        min-height: 250px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      nav ul {
+        gap: 10px;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* REDUZIR MOVIMENTO */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#conteudo" class="skip-link">
+    Pular para o conteúdo
+  </a>
+
+  <!-- CABEÇALHO -->
+
+  <header>
+    <div class="container header-content">
+
+      <div class="logo">
+        &lt;/&gt; Tecnologia para Todos
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#barreiras">Barreiras</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#audio">Áudio</a></li>
+          <li><a href="#video">Vídeo</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+        <p class="section-label">
+          TECNOLOGIA • INCLUSÃO • ACESSIBILIDADE
+        </p>
+
+        <h1>
+          Tecnologia que inclui é tecnologia para todos.
+        </h1>
+
+        <p>
+          A acessibilidade digital ajuda a garantir que diferentes
+          pessoas possam utilizar sites, aplicativos, computadores
+          e outros recursos tecnológicos.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section id="sobre">
+
+      <div class="container">
+
+        <p class="section-label">
+          01 — SOBRE
+        </p>
+
+        <h2>
+          O que é acessibilidade digital?
+        </h2>
+
+        <p class="section-intro">
+          A acessibilidade digital significa criar tecnologias,
+          sites e aplicativos que possam ser utilizados pelo maior
+          número possível de pessoas, incluindo pessoas com
+          diferentes necessidades.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+
+            <h3>
+              Inclusão
+            </h3>
+
+            <p>
+              A tecnologia pode ajudar a ampliar o acesso à
+              informação, educação, comunicação e serviços.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Autonomia
+            </h3>
+
+            <p>
+              Recursos acessíveis permitem que mais pessoas
+              realizem atividades digitais com independência.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Participação
+            </h3>
+
+            <p>
+              Uma internet acessível permite que diferentes
+              pessoas participem da vida digital.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BARREIRAS -->
+
+    <section id="barreiras" class="gray-section">
+
+      <div class="container">
+
+        <p class="section-label">
+          02 — BARREIRAS
+        </p>
+
+        <h2>
+          Quais barreiras podem existir?
+        </h2>
+
+        <p class="section-intro">
+          Alguns sites e aplicativos ainda apresentam obstáculos
+          que podem dificultar o acesso e a utilização da tecnologia.
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+
+            <h3>
+              Falta de contraste
+            </h3>
+
+            <p>
+              Textos com pouco contraste podem dificultar
+              a leitura.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Imagens sem descrição
+            </h3>
+
+            <p>
+              Pessoas que utilizam leitores de tela podem
+              ter dificuldade para compreender imagens sem
+              texto alternativo.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>
+              Navegação difícil
+            </h3>
+
+            <p>
+              Menus confusos e páginas sem uma ordem lógica
+              podem dificultar a navegação.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOLUÇÕES -->
+
+    <section id="solucoes">
+
+      <div class="container">
+
+        <p class="section-label">
+          03 — SOLUÇÕES
+        </p>
+
+        <h2>
+          Como tornar a tecnologia mais acessível?
+        </h2>
+
+        <p class="section-intro">
+          Pequenas decisões no desenvolvimento podem fazer
+          uma grande diferença para a acessibilidade.
+        </p>
+
+        <div class="solutions">
+
+          <article class="solution">
+
+            <h3>
+              Navegação por teclado
+            </h3>
+
+            <p>
+              Todos os botões, links e campos importantes
+              devem poder ser acessados pelo teclado.
+            </p>
+
+          </article>
+
+
+          <article class="solution">
+
+            <h3>
+              Textos alternativos
+            </h3>
+
+            <p>
+              Imagens importantes devem possuir descrições
+              que expliquem seu conteúdo.
+            </p>
+
+          </article>
+
+
+          <article class="solution">
+
+            <h3>
+              Contraste adequado
+            </h3>
+
+            <p>
+              Cores com bom contraste ajudam na leitura
+              e na identificação das informações.
+            </p>
+
+          </article>
+
+
+          <article class="solution">
+
+            <h3>
+              Legendas
+            </h3>
+
+            <p>
+              Vídeos podem utilizar legendas para facilitar
+              o acesso ao conteúdo falado.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALERIA -->
+
+    <section id="galeria" class="gray-section">
+
+      <div class="container">
+
+        <p class="section-label">
+          04 — GALERIA
+        </p>
+
+        <h2>
+          Inclusão também aparece no design
+        </h2>
+
+        <p class="section-intro">
+          Veja alguns exemplos de recursos que ajudam a tornar
+          experiências digitais mais acessíveis.
+        </p>
+
+
+        <div class="gallery">
+
+
+          <!-- IMAGEM 01 -->
+
+          <article class="gallery-item">
+
+            <div class="gallery-text">
+
+              <span class="gallery-number">
+                01
+              </span>
+
+              <h3>
+                Navegação por teclado
+              </h3>
+
+              <p>
+                Uma página acessível não deve depender apenas
+                do mouse.
+              </p>
+
+              <p>
+                Pessoas que utilizam o teclado precisam conseguir
+                acessar menus, botões, links e formulários.
+              </p>
+
+              <p>
+                Por isso, os elementos interativos devem seguir
+                uma ordem lógica e apresentar um indicador visual
+                de foco.
+              </p>
+
+            </div>
+
+
+            <div class="gallery-image">
+
+              <img
+                src="./assets/imagem_01.png"
+                alt="Imagem representando a navegação por teclado e a acessibilidade digital"
+              >
+
+            </div>
+
+          </article>
+
+
+          <!-- IMAGEM 02 -->
+
+          <article class="gallery-item reverse">
+
+
+            <div class="gallery-image">
+
+              <img
+                src="./assets/imagem_02.png"
+                alt="Imagem representando contraste adequado e facilidade de leitura"
+              >
+
+            </div>
+
+
+            <div class="gallery-text">
+
+              <span class="gallery-number">
+                02
+              </span>
+
+              <h3>
+                Contraste e legibilidade
+              </h3>
+
+              <p>
+                Cores com contraste adequado ajudam diferentes
+                pessoas a perceber textos, botões e informações
+                importantes.
+              </p>
+
+              <p>
+                Uma boa escolha de cores também facilita a leitura
+                em diferentes telas e condições de iluminação.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- IMAGEM 03 -->
+
+          <article class="gallery-item">
+
+
+            <div class="gallery-text">
+
+              <span class="gallery-number">
+                03
+              </span>
+
+              <h3>
+                Vídeos com legendas
+              </h3>
+
+              <p>
+                As legendas permitem que pessoas surdas ou com
+                perda auditiva acompanhem o conteúdo falado de
+                um vídeo.
+              </p>
+
+              <p>
+                Elas também são úteis para quem está em um ambiente
+                barulhento ou precisa assistir ao conteúdo sem
+                utilizar o áudio.
+              </p>
+
+            </div>
+
+
+            <div class="gallery-image">
+
+              <img
+                src="./assets/imagem_03.jpg"
+                alt="Imagem representando um vídeo com legendas para acessibilidade"
+              >
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ÁUDIO -->
+
+    <section id="audio">
+
+      <div class="container">
+
+        <p class="section-label">
+          05 — ÁUDIO
+        </p>
+
+        <h2>
+          Ouça sobre acessibilidade digital
+        </h2>
+
+        <p class="section-intro">
+          O áudio apresenta uma breve reflexão sobre a
+          importância de criar tecnologias que possam ser
+          utilizadas por todas as pessoas.
+        </p>
+
+
+        <div class="audio-box">
+
+          <h3>
+            🎧 Tecnologia acessível
+          </h3>
+
+          <p>
+            Clique no botão abaixo para ouvir o áudio.
+          </p>
+
+
+          
+    <audio controls>
+    <source src="MiniMax_2026-09-23_14_56_55_Godfather (1).mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+</audio>
+
+            
+
+
+          <details class="transcript">
+
+            <summary>
+              Ler a transcrição do áudio
+            </summary>
+
+            <p>
+              A tecnologia está presente em diferentes momentos
+              da nossa vida.
+            </p>
+
+            <p>
+              Utilizamos celulares, computadores, aplicativos
+              e sites para estudar, trabalhar, conversar e acessar
+              serviços.
+            </p>
+
+            <p>
+              Porém, nem todas as pessoas utilizam a tecnologia
+              da mesma maneira.
+            </p>
+
+            <p>
+              Por isso, desenvolver recursos acessíveis é
+              fundamental para garantir que mais pessoas possam
+              participar do mundo digital.
+            </p>
+
+            <p>
+              Recursos como legendas, contraste adequado,
+              navegação por teclado, descrições de imagens e
+              textos claros podem ajudar a diminuir barreiras.
+            </p>
+
+            <p>
+              A acessibilidade deve ser pensada desde o começo
+              de um projeto.
+            </p>
+
+            <p>
+              Criar tecnologia acessível significa criar
+              oportunidades para que mais pessoas possam
+              participar do mundo digital.
+            </p>
+
+            <p>
+              Tecnologia para todos significa tecnologia que inclui.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VÍDEO -->
+
+    <section id="video" class="gray-section">
+
+      <div class="container">
+
+        <p class="section-label">
+          06 — VÍDEO
+        </p>
+
+        <h2>
+          Tecnologia acessível na prática
+        </h2>
+
+        <p class="section-intro">
+          O vídeo apresenta a importância de pensar na
+          acessibilidade desde o desenvolvimento de uma
+          tecnologia.
+        </p>
+
+
+        <div class="video-box">
+
+          <video controls preload="metadata">
+
+            <source
+              src="video/acessibilidade.mp4"
+              type="video/mp4"
+            >
+
+            Seu navegador não suporta o elemento de vídeo.
+
+          </video>
+
+
+          <p class="video-description">
+            Vídeo sobre a importância da acessibilidade digital
+            e da inclusão na tecnologia.
+          </p>
+
+
+          <details class="transcript">
+
+            <summary>
+              Ver transcrição completa do vídeo
+            </summary>
+
+            <p>
+              A tecnologia faz parte da vida de milhões de pessoas.
+            </p>
+
+            <p>
+              Utilizamos celulares, computadores, aplicativos
+              e sites para estudar, trabalhar, conversar e acessar
+              serviços.
+            </p>
+
+            <p>
+              Porém, nem todas as pessoas utilizam a tecnologia
+              da mesma maneira.
+            </p>
+
+            <p>
+              Por isso, desenvolver recursos acessíveis é
+              fundamental para garantir que mais pessoas possam
+              participar do mundo digital.
+            </p>
+
+            <p>
+              Recursos como legendas, contraste adequado,
+              navegação por teclado, textos claros e descrições
+              de imagens podem fazer uma grande diferença.
+            </p>
+
+            <p>
+              A acessibilidade deve ser pensada desde o começo
+              de um projeto.
+            </p>
+
+            <p>
+              Quando a tecnologia é planejada para diferentes
+              pessoas, todos podem ter uma experiência melhor.
+            </p>
+
+            <p>
+              Tecnologia para todos significa tecnologia que inclui.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MENSAGEM FINAL -->
+
+    <section class="final-message">
+
+      <div class="container">
+
+        <h2>
+          Tecnologia para todos
+        </h2>
+
+        <p>
+          A acessibilidade não é apenas um recurso extra.
+          Ela é uma forma de garantir que mais pessoas possam
+          participar, aprender, se comunicar e utilizar a tecnologia.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>
+          Tecnologia para Todos
+        </strong>
+
+        <p>
+          Acessibilidade digital: tecnologia que pode ser usada por todos.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p>
+          Trabalho escolar
+        </p>
+
+        <p>
+          Desenvolvido por: Sophia Kruk Andraski & Manoella Moura de Miranda
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
